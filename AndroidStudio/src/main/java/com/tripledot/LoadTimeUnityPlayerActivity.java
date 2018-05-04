@@ -16,7 +16,7 @@ public class LoadTimeUnityPlayerActivity extends UnityPlayerActivity
     }
 
     @Override protected void onCreate(Bundle savedInstanceState) {
-        Log.w("LoadTimeUPA", "onCreate");
+        Log.w("LoadTimeUnity", "onCreate");
         instance = this;
         super.onCreate(savedInstanceState);
     }
