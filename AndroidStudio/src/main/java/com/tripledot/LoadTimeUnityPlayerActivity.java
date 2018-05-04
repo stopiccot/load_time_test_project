@@ -15,9 +15,16 @@ public class LoadTimeUnityPlayerActivity extends UnityPlayerActivity
         return instance;
     }
 
+    private static long onCreateTimestamp;
+
     @Override protected void onCreate(Bundle savedInstanceState) {
         Log.w("LoadTimeUnity", "onCreate");
         instance = this;
+        onCreateTimestamp = System.currentTimeMillis();
         super.onCreate(savedInstanceState);
+    }
+
+    public static long timeSinceOnCreate() {
+        return System.currentTimeMillis() - onCreateTimestamp;
     }
 }
