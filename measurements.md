@@ -1,3 +1,8 @@
+net46 + il2cpp without shaders (only UI/Default left)
+
+Clean launch - 2786, 2747, 2796, 3025, 3107 --- 2892
+Launch       -  911,  897,  913, 1016,  906 ---  928
+
 net46 + il2cpp
 
 Clean launch - 3556, 3435, 3406, 3781, 3477 --- 3531
