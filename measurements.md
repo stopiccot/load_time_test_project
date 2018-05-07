@@ -1,3 +1,8 @@
+Firebase
+
+Clean launch - 3032, 3022, 3057, 2921, 3138 --- 3034
+Launch       - 1055, 1156, 1115, 1036, 1040 --- 1080
+
 net46 + il2cpp without shaders (only UI/Default left)
 
 Clean launch - 2786, 2747, 2796, 3025, 3107 --- 2892
