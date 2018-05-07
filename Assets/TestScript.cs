@@ -7,24 +7,27 @@ public class TestScript : MonoBehaviour {
     public UnityEngine.UI.Text text;
 
     // Use this for initialization
-    void Start() {
+    void Timestamp(string tag) {
         long time = 0;
 
-#if UNITY_ANDROID
+#if UNITY_ANDROID && !UNITY_EDITOR
         using (AndroidJavaClass loadTimeUnityPlayerActivityClass = new AndroidJavaClass("com.tripledot.LoadTimeUnityPlayerActivity")) {
-            time = loadTimeUnityPlayerActivityClass.CallStatic<long>("timeSinceOnCreate");
+            time = loadTimeUnityPlayerActivityClass.CallStatic<long>("timeSinceOnCreate", tag);
         }
 #endif
 
-        text.text = time.ToString();
+        text.text = text.text + time.ToString() + " - " + tag + "\n";
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	private void Start() {
+        Timestamp("Start");
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("event1");
+        Timestamp("Event1");
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("event2");
+        Timestamp("Event2");
 	}
 
-    public void ButtonClick() 
+	public void ButtonClick() 
     {
         var rt = GetComponent<RectTransform>();
         var ap = rt.anchoredPosition;

@@ -24,7 +24,9 @@ public class LoadTimeUnityPlayerActivity extends UnityPlayerActivity
         super.onCreate(savedInstanceState);
     }
 
-    public static long timeSinceOnCreate() {
-        return System.currentTimeMillis() - onCreateTimestamp;
+    public static long timeSinceOnCreate(String tag) {
+        long result = System.currentTimeMillis() - onCreateTimestamp;
+        Log.w("LoadTimeUnity", "timeSinceOnCreate - " + result + " - " + tag);
+        return result;
     }
 }
