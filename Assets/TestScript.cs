@@ -11,8 +11,8 @@ public class TestScript : MonoBehaviour {
         long time = 0;
 
 #if UNITY_ANDROID && !UNITY_EDITOR
-        using (AndroidJavaClass loadTimeUnityPlayerActivityClass = new AndroidJavaClass("com.tripledot.LoadTimeUnityPlayerActivity")) {
-            time = loadTimeUnityPlayerActivityClass.CallStatic<long>("timeSinceOnCreate", tag);
+        using (AndroidJavaClass startupTimeApplicationClass = new AndroidJavaClass("com.tripledot.StartupTimeApplication")) {
+            time = startupTimeApplicationClass.CallStatic<long>("timeSinceOnCreate", tag);
         }
 #endif
 

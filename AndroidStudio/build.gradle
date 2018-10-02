@@ -18,7 +18,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-        archivesBaseName = "LoadTimeUnityPlayerActivity"
+        archivesBaseName = "StartupTimeApplication"
     }
 }
 
@@ -28,5 +28,4 @@ repositories {
 
 dependencies {
     compile 'com.android.support:support-v4:+'
-    provided fileTree(dir: '/Applications/Unity/PlaybackEngines/AndroidPlayer/Variations/mono/Release/Classes', include: ['*.jar'])
 }
