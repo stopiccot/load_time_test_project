@@ -1,6 +1,10 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.2'
@@ -19,13 +23,18 @@ android {
         versionCode 1
         versionName "1.0"
         archivesBaseName = "StartupTimeApplication"
+        multiDexEnabled true
     }
 }
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:+'
+    compile 'com.android.support:multidex:1.0.3'
 }

@@ -1,9 +1,9 @@
 package com.tripledot;
 
-import android.app.Application;
 import android.util.Log;
 
-public class StartupTimeApplication extends Application
+// For multidex to work android versions prior to 5.0 we need to subclass from MultiDexApplication class
+public class StartupTimeApplication extends android.support.multidex.MultiDexApplication
 {
     private static StartupTimeApplication instance = null;
     public static StartupTimeApplication getInstance() {
